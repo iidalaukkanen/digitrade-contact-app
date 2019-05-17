@@ -5,12 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'ContactWebApp';
-  message = '';
+export class AppComponent{
 
-  onButtonClick() {
-    console.log('Termos!');
-    this.message = 'Morjos!';
-  }
 }
