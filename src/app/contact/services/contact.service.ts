@@ -9,9 +9,9 @@ export class ContactService {
 
   constructor() {
     this.contacts = [
-      new Contact('Aki', 'Ankka', '0503395919'),
-      new Contact('Iita', 'Ankka', '0451229755'),
-      new Contact('Tofi', 'Ankka', '<3')
+      new Contact('Aksu', 'Tiksu', '0503395919', 'aki.tiainen@student.saimia.fi', 'Kannelkatu 10A 8', '53100', 'Lappeenranta'),
+      new Contact('Iita', 'Laukkis', '0451229755', 'iida.laukkanen@student.saimia.fi', 'Teknologiapuistonkatu 4D 42','53850', 'Lappeenranta'),
+      new Contact('Tofi', 'Kisse', '<3', 'tofi.kisse@miukumauku.fi', 'Tanhumäentie 27B', '04420', 'Järvenpää')
     ];
   }
 

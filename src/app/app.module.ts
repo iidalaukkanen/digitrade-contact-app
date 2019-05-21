@@ -10,6 +10,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import { ContactDetailComponent } from './contact/contact-detail/contact-detail.component';
 import {MatInputModule} from "@angular/material";
 import {MatButtonModule} from "@angular/material/button";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {MatButtonModule} from "@angular/material/button";
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
