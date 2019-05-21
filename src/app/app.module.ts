@@ -6,7 +6,10 @@ import {FormsModule} from "@angular/forms";
 import { ContactListComponent } from './contact/contact-list/contact-list.component';
 import { ContactListItemComponent } from './contact/contact-list/contact-list-item/contact-list-item.component';
 import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from "@angular/material/form-field";
 import { ContactDetailComponent } from './contact/contact-detail/contact-detail.component';
+import {MatInputModule} from "@angular/material";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { ContactDetailComponent } from './contact/contact-detail/contact-detail.
   imports: [
     BrowserModule,
     FormsModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
