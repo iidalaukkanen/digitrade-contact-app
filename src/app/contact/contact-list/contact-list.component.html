@@ -1,6 +1,7 @@
 <input value="{{selectedContactName}}">
 
 <div *ngFor="let c of contacts">
+  <ngx-avatar name="{{c.firstName}} {{c.lastName}}"></ngx-avatar>
   <dtca-contact-list-item
     [contact]="c"
     (selected)="onContactSelected($event)">
