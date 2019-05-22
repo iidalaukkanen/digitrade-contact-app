@@ -12,6 +12,8 @@ import {MatInputModule} from "@angular/material";
 import {MatButtonModule} from "@angular/material/button";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatIconModule} from "@angular/material/icon";
+import {HttpClientModule} from "@angular/common/http";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import {MatIconModule} from "@angular/material/icon";
     MatInputModule,
     MatButtonModule,
     FlexLayoutModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
