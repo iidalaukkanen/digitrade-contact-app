@@ -18,6 +18,8 @@ import {AvatarModule} from "ngx-avatar";
 import {RouterModule, Routes} from "@angular/router";
 import {MatSidenavModule} from "@angular/material";
 import {MatToolbarModule} from "@angular/material";
+import {ContactService} from "./contact/services/contact.service";
+import {ContactHttpService} from "./contact/services/contact-http.service";
 
 const appRoutes: Routes = [
   {path: 'contacts', component: ContactListComponent},
@@ -34,22 +36,25 @@ const appRoutes: Routes = [
     ContactDetailComponent
   ],
   imports: [
+    AvatarModule,
+    BrowserAnimationsModule,
     BrowserModule,
+    FlexLayoutModule,
     FormsModule,
+    HttpClientModule,
+    MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    FlexLayoutModule,
     MatIconModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    AvatarModule,
+    MatInputModule,
     MatSidenavModule,
     MatToolbarModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    ContactHttpService,
+    ContactService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

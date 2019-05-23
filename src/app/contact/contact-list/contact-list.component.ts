@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import { Contact } from '../contact';
 import {ContactService} from "../services/contact.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'dtca-contact-list',
@@ -11,13 +12,14 @@ export class ContactListComponent implements OnInit {
   contacts: Contact[];
   selectedContactName: string;
 
-  constructor(private contactService: ContactService) {
+  constructor(private contactService: ContactService, private router: Router) {
     this.contacts = [];
     this.selectedContactName = '';
   }
 
   onContactSelected(contact: Contact): void {
-    this.selectedContactName = contact.firstName + ' ' + contact.lastName;
+    //this.selectedContactName = contact.firstName + ' ' + contact.lastName;
+    this. router.navigate(['/contacts/' + contact.id])
   }
 
   ngOnInit() {
@@ -26,6 +28,7 @@ export class ContactListComponent implements OnInit {
     */
    this.contactService.get().subscribe((response => {
      this.contacts = response;
+     console.log(response);
    }));
   }
 }

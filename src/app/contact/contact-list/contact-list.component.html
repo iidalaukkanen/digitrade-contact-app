@@ -1,6 +1,6 @@
 <input value="{{selectedContactName}}">
 
-<div *ngFor="let c of contacts" fxLayout="row">
+<div *ngFor="let c of contacts" fxLayout="row ">
   <ngx-avatar name="{{c.firstName}} {{c.lastName}}"></ngx-avatar>
   <dtca-contact-list-item
     [contact]="c"
