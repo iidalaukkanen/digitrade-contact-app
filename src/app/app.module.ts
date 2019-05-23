@@ -15,8 +15,16 @@ import {MatIconModule} from "@angular/material/icon";
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AvatarModule} from "ngx-avatar";
+import {RouterModule, Routes} from "@angular/router";
+import {MatSidenavModule} from "@angular/material";
+import {MatToolbarModule} from "@angular/material";
 
-
+const appRoutes: Routes = [
+  {path: 'contacts', component: ContactListComponent},
+  {path: 'contacts/new', component: ContactDetailComponent},
+  {path: 'contacts/:id', component: ContactDetailComponent},
+  {path: '', redirectTo: 'contacts', pathMatch:'full'}
+];
 
 @NgModule({
   declarations: [
@@ -36,7 +44,10 @@ import {AvatarModule} from "ngx-avatar";
     MatIconModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    AvatarModule
+    AvatarModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

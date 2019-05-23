@@ -24,4 +24,10 @@ export class ContactHttpService {
         })
       );
   }
+
+  getById(id): Observable<Contact> {
+    return this.http.get(this.url + '/' + id).pipe(map(response => {
+      return response as Contact;
+    }));
+  }
 }
