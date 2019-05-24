@@ -20,7 +20,7 @@ import {MatSidenavModule} from "@angular/material";
 import {MatToolbarModule} from "@angular/material";
 import {ContactService} from "./contact/services/contact.service";
 import {ContactHttpService} from "./contact/services/contact-http.service";
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { ToolbarComponent } from './layout/toolbar/toolbar.component';
 
 const appRoutes: Routes = [
   {path: 'contacts', component: ContactListComponent},
