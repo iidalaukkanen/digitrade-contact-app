@@ -2,3 +2,20 @@
   margin-left: -16px;
   margin-right: -16px;
 }
+
+.dtca-card{
+  width: 80vw;
+  height: 90vw;
+  margin: auto;
+  display: block;
+}
+
+mat-nav-list{
+  padding: 0;
+}
+
+.add-button{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}

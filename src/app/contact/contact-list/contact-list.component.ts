@@ -2,6 +2,8 @@ import {Component, OnInit} from "@angular/core";
 import { Contact } from '../contact';
 import {ContactService} from "../services/contact.service";
 import {Router} from "@angular/router";
+import {ToolbarOptions} from "../../layout/toolbar/toolbar-options";
+import {ToolbarService} from "../../layout/toolbar/toolbar.service";
 
 @Component({
   selector: 'dtca-contact-list',
@@ -12,7 +14,7 @@ export class ContactListComponent implements OnInit {
   contacts: Contact[];
   selectedContactName: string;
 
-  constructor(private contactService: ContactService, private router: Router) {
+  constructor(private contactService: ContactService, private router: Router, private toolbar: ToolbarService) {
     this.contacts = [];
     this.selectedContactName = '';
   }
@@ -23,12 +25,11 @@ export class ContactListComponent implements OnInit {
   }
 
   ngOnInit() {
-   /* this.contacts = this.contactService.get();
-    console.log(this.contacts);
-    */
-   this.contactService.get().subscribe((response => {
+   this.contactService.get().subscribe(response => {
      this.contacts = response;
      console.log(response);
-   }));
+   });
+
+   this.toolbar.setToolbarOptions(new ToolbarOptions(false, ' Contacts', []));
   }
 }

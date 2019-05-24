@@ -1,1 +1,9 @@
-.card-width{max-width: 100%}
+.card-width{
+  max-width: 100%
+}
+
+.done-button{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
