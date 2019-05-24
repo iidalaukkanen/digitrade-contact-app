@@ -21,7 +21,11 @@ export class ContactListComponent implements OnInit {
 
   onContactSelected(contact: Contact): void {
     //this.selectedContactName = contact.firstName + ' ' + contact.lastName;
-    this. router.navigate(['/contacts/' + contact.id])
+    this.router.navigate(['/contacts/' + contact.id], {skipLocationChange: true})
+  }
+
+  onCreateNew(): void {
+    this.router.navigate(['/contacts/new'])
   }
 
   ngOnInit() {
