@@ -50,11 +50,8 @@
       </mat-form-field>
     </div>
   </div>
-  <!--button mat-fab class="done-button">
-    <mat-icon>done_outline</mat-icon>
-  </button-->
+  <button mat-fab class="create-button" *ngIf="contactId==null">
+    <i class="material-icons">done_outline</i>
+  </button>
 </mat-card>
 
-<button mat-fab class="create-button" *ngIf="contactId=='new'">
-  <i class="material-icons">done_outline</i>
-</button>

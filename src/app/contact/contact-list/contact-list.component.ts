@@ -12,11 +12,9 @@ import {ToolbarService} from "../../layout/toolbar/toolbar.service";
 })
 export class ContactListComponent implements OnInit {
   contacts: Contact[];
-  selectedContactName: string;
 
   constructor(private contactService: ContactService, private router: Router, private toolbar: ToolbarService) {
     this.contacts = [];
-    this.selectedContactName = '';
   }
 
   onContactSelected(contact: Contact): void {
