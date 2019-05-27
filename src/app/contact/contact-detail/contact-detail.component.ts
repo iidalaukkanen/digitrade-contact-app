@@ -14,9 +14,12 @@ import {ToolbarAction} from "../../layout/toolbar/toolbar-action";
 export class ContactDetailComponent implements OnInit {
   contact: Contact;
   contactId: any;
+  editingEnabled: boolean;
+
 
   constructor(private router: Router, private route: ActivatedRoute, private contactService: ContactService, private toolbar: ToolbarService) {
     this.contact = new Contact();
+    this.editingEnabled = false;
   }
 
   ngOnInit() {
@@ -25,6 +28,7 @@ export class ContactDetailComponent implements OnInit {
 
     if (isNaN(this.contactId)){
       toolbarActions = [];
+      this.editingEnabled = true;
     }
     else {
       toolbarActions = [new ToolbarAction(this.onEdit.bind(this), 'edit')];
@@ -38,6 +42,23 @@ export class ContactDetailComponent implements OnInit {
   }
 
   onEdit() {
+    let toolbarActions: ToolbarAction[];
+    this.editingEnabled = !this.editingEnabled;
+    if (this.editingEnabled === true){
+      toolbarActions = [
+        new ToolbarAction(this.onDelete.bind(this), 'delete'),
+        new ToolbarAction(this.onEdit.bind(this), 'edit')
+      ];
+    }
+    else {
+      toolbarActions = [new ToolbarAction(this.onEdit.bind(this), 'edit')]
+    }
+
+    this.toolbar.setToolbarOptions(new ToolbarOptions(true, ' Contact', toolbarActions));
+
+  }
+
+  onDelete(){
 
   }
 }
