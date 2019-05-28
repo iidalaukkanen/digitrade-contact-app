@@ -5,6 +5,7 @@ import {ContactService} from "../services/contact.service";
 import {ToolbarService} from "../../layout/toolbar/toolbar.service";
 import {ToolbarOptions} from "../../layout/toolbar/toolbar-options";
 import {ToolbarAction} from "../../layout/toolbar/toolbar-action";
+import {MatSnackBar} from "@angular/material";
 
 @Component({
   selector: 'dtca-contact-detail',
@@ -17,7 +18,8 @@ export class ContactDetailComponent implements OnInit {
   editingEnabled: boolean;
 
 
-  constructor(private router: Router, private route: ActivatedRoute, private contactService: ContactService, private toolbar: ToolbarService) {
+  constructor(private router: Router, private route: ActivatedRoute, private contactService: ContactService,
+              private toolbar: ToolbarService, private snackBar: MatSnackBar) {
     this.contact = new Contact();
     this.editingEnabled = false;
   }
@@ -62,13 +64,25 @@ export class ContactDetailComponent implements OnInit {
     this.editingEnabled = false;
     this.contactService.deleteContact(this.contact).subscribe(() => {
       this.router.navigate(['/contacts']);
+      this.snackBar.open('Contact deleted!', 'OK', {duration: 3000});
     });
   }
 
   onSave() {
-    this.contactService.createContact(this.contact).subscribe(response => {
-      console.log(response);
-      this.router.navigate(['/contacts']);
-    });
+    if (isNaN(this.contactId)) {
+      this.contactService.createContact(this.contact).subscribe(response => {
+        console.log(response);
+        this.router.navigate(['/contacts']);
+        this.snackBar.open('Contact created!', 'OK', {duration: 3000});
+      });
+    }
+
+    else{
+      this.contactService.updateContact(this.contact).subscribe(response => {
+        this.contact = response;
+        this.editingEnabled = false;
+        this.snackBar.open('Contact updated!', 'OK', {duration: 3000});
+      });
+    }
   }
 }

@@ -8,7 +8,7 @@ import { ContactListItemComponent } from './contact/contact-list/contact-list-it
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { ContactDetailComponent } from './contact/contact-detail/contact-detail.component';
-import {MatInputModule, MatListModule} from "@angular/material";
+import {MatInputModule, MatListModule, MatSnackBarModule} from "@angular/material";
 import {MatButtonModule} from "@angular/material/button";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatIconModule} from "@angular/material/icon";
@@ -49,10 +49,11 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
+    MatListModule,
     MatSidenavModule,
+    MatSnackBarModule,
     MatToolbarModule,
-    RouterModule.forRoot(appRoutes),
-    MatListModule
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     ContactHttpService,

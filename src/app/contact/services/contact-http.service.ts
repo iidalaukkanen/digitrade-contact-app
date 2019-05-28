@@ -40,4 +40,10 @@ export class ContactHttpService {
       return response as Contact;
     }));
   }
+
+  put(contact): Observable<Contact> {
+    return this.http.put(this.url + '/' + contact.id, contact).pipe(map(response => {
+      return response as Contact;
+    }));
+  }
 }
