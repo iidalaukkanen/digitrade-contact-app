@@ -57,7 +57,7 @@
       </mat-form-field>
     </div>
   </div>
-  <button mat-fab class="create-button" *ngIf="contactId==null">
+  <button mat-fab class="create-button" *ngIf="editingEnabled==true" (click)="onSave()">
     <i class="material-icons">done_outline</i>
   </button>
 </mat-card>

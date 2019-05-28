@@ -59,6 +59,16 @@ export class ContactDetailComponent implements OnInit {
   }
 
   onDelete(){
+    this.editingEnabled = false;
+    this.contactService.deleteContact(this.contact).subscribe(() => {
+      this.router.navigate(['/contacts']);
+    });
+  }
 
+  onSave() {
+    this.contactService.createContact(this.contact).subscribe(response => {
+      console.log(response);
+      this.router.navigate(['/contacts']);
+    });
   }
 }
