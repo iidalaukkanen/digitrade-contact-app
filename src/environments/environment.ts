@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  endpointUrl: 'http://localhost:3000/'
+  endpointUrl: 'https://dtcontactapi.azurewebsites.net/api/'
 };
 
 /*
